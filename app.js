@@ -26,7 +26,14 @@ app.get('/', (req, res) => {
 
 //adding past route
 app.post('/register', (req, res) => {
-	console.log('post request has been made :' + req.body.email);
+	let users = {
+		email: req.body.email //same key which we use in the name field od home.ejs
+	};
+
+	myUserDb.query('INSERT INTO users SET ?', users, (err, resu) => {
+		if (err) throw err;
+		res.redirect('/');
+	});
 });
 
 //adding routes
