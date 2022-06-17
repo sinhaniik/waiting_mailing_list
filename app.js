@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
 
 const myUserDb = mysql.createConnection({
 	user: 'root',
@@ -15,8 +19,14 @@ app.get('/', (req, res) => {
 	myUserDb.query(que, (err, results) => {
 		if (err) throw err;
 		let count = results[0].count;
-		res.send('we have ' + count + ' users in our db');
+
+		res.render('home', { userCount: count });
 	});
+});
+
+//adding past route
+app.post('/register', (req, res) => {
+	console.log('post request has been made :' + req.body.email);
 });
 
 //adding routes
