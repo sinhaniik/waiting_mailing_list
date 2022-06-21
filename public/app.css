@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Comforter&family=Dancing+Script:wght@700&family=Fira+Code:wght@300&family=Lora&family=Open+Sans:wght@300&family=Shalimar&family=Ubuntu:wght@700&display=swap');
+
+body {
+	background-color: rgb(217, 207, 190);
+	font-family: 'Lora', serif;
+	text-align: center;
+	color: rgb(26, 13, 39);
+}
+
+h1 {
+	height: 3rem;
+	font-size: 3rem;
+}
+
+.lead {
+	font-size: 2rem;
+}
+
+form input {
+	padding: 0.7rem;
+	font-family: 'Lora', serif;
+	font-size: 1rem;
+	text-align: center;
+}
+
+button {
+	padding: 0.7rem;
+	font-size: 1rem;
+	font-family: 'Lora', serif;
+	text-transform: capitalize;
+	background-color: aqua;
+}
